@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+<!-- ================ start banner area ================= -->	
+	<section class="blog-banner-area" id="category">
+		<div class="container h-100">
+			<div class="blog-banner">
+				<div class="text-center">
+					<h1>제품 검색</h1>
+					<nav aria-label="breadcrumb" class="banner-breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="#">Home</a></li>
+              <li class="breadcrumb-item active" aria-current="page">Find</li>
+            </ol>
+          </nav>
+				</div>
+			</div>
+    </div>
+	</section>
+	<!-- ================ end banner area ================= -->
+
+
+	<!-- ================ category section start ================= -->		  
+  <section class="section-margin--small mb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-xl-12 col-lg-8 col-md-7">
+          <!-- Start Filter Bar -->
+          <div class="filter-bar d-flex flex-wrap align-items-center">
+            <div class="sorting">
+              <select>
+                <option value="1">Default sorting</option>
+                <option value="1">Default sorting</option>
+                <option value="1">Default sorting</option>
+              </select>
+            </div>
+            <div class="sorting mr-auto">
+              <select>
+                <option value="1">Show 12</option>
+                <option value="1">Show 12</option>
+                <option value="1">Show 12</option>
+              </select>
+            </div>
+            <div>
+              <div class="input-group filter-bar-search">
+              <form method="post" action="/perfume/perfume_find">
+                <input type="text" name=name class="input-sm" placeholder="Search">
+                <div class="input-group-append" style="display: inline;">
+                  <button type="submit" class="inline"><i class="ti-search"></i></button>
+                </div>
+                </form>
+              </div>
+            </div>
+          </div>
+          <!-- End Filter Bar -->
+          <!-- Start Best Seller -->
+          <section class="lattest-product-area pb-40 category-list">
+            <div class="row">
+              <div class="col-md-6 col-lg-4" th:each="vo:${list}">
+                <div class="card text-center card-product">
+                  <div class="card-product__img">
+                  <a th:href="@{/perfume/perfume_detail(no=${vo.no})}">
+                    <img class="card-img" th:src="${vo.poster}" alt="">
+                    </a>
+                    <ul class="card-product__imgOverlay">
+                      <li><button><i class="ti-search"></i></button></li>
+                      <li><button><i class="ti-shopping-cart"></i></button></li>
+                      <li><button><i class="ti-heart"></i></button></li>
+                    </ul>
+                  </div>
+                  <div class="card-body">
+                    <p th:text="${vo.brand}"></p>
+                    <h4 class="card-product__title"><a th:href="@{/perfume/perfume_detail(no=${vo.no})}" th:text="${vo.name}"></a></h4>
+                    <p class="card-product__price" th:text="${vo.price}"></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+                        <div class="page">
+			       <ul>
+			          <li th:if="${startPage>1}"><a th:href="@{/perfume/perfume_find(page=${startPage-1},name=${name})}">&laquo; Previous</a></li>
+			          <li th:class="${curpage==i}?'current':''" th:each="i:${#numbers.sequence(startPage,endPage)}"><a th:href="@{/perfume/perfume_find(page=${i},name=${name})}" th:text="${i}"></a></li>
+			          <li th:if="${endPage<totalpage}"><a th:href="@{/perfume/perfume_find(page=${endPage+1},name=${name})}">Next &raquo;</a></li>
+			    </ul>
+			    </div>
+          <!-- End Best Seller -->
+        </div>
+      </div>
+    </div>
+  </section>
+	<!-- ================ category section end ================= -->		  
+
+</body>
+</html>
