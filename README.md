@@ -1,6 +1,6 @@
 # Perfume : 향수 쇼핑몰
 
-<img width="222" alt="상품목록" src="https://user-images.githubusercontent.com/113018906/231684387-15be79f3-9110-4b41-ac89-a5fb0f00218e.png">
+<img width="600" alt="상품목록" src="https://user-images.githubusercontent.com/113018906/231684387-15be79f3-9110-4b41-ac89-a5fb0f00218e.png">
 
 
 ## 주요 기능
