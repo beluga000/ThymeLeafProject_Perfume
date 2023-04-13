@@ -11,9 +11,9 @@
 
 ## 기술 스택
 - Front
-  - Javascript, VueJS, Ajax, Bootstrap<br>
+  - Javascript, ThymeLeaf, Bootstrap<br>
 - Back
-  - Java -version 14, Spring-Framwork5, JSP/Servlet, Oracle DB, JQuery, MyBatis
+  - Java -version 14, Spring-Boot, JPA, MySQL
 
 ## 개발 기간
 - 2023.03.23 ~ 2023.03.24
